@@ -50,15 +50,16 @@ export class SemanticAccordionComponent implements AfterViewInit {
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: "sm-accordion-item",
   template: `
-<div class="{{class}} title">
-    <i class="dropdown icon"></i>
-    <ng-content select="accordion-title"></ng-content>
-</div>
-<div class="{{class}} content">
-    <ng-content select="accordion-content"></ng-content>
-</div>
-`
+    <div class="{{class}} title">
+        <i class="dropdown icon"></i>
+        {{title}}
+    </div>
+    <div class="{{class}} content">
+        <ng-content></ng-content>
+    </div>
+    `
 })
 export class SemanticAccordionItemComponent {
   @Input() class: string;
+  @Input() title: string;
 }

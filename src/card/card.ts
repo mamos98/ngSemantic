@@ -13,16 +13,16 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
     <img src="{{image}}">
   </div>
   <div class="content">
-    <ng-content select="card-title"></ng-content>
+    {{title}}
     <div class="meta">
-      <ng-content select="card-subtitle"></ng-content>
+      <ng-content select="[card-subtitle]"></ng-content>
     </div>
     <div class="description">
-      <ng-content select="card-content"></ng-content>
+      <ng-content select="[card-content]"></ng-content>
     </div>
   </div>
   <div class="extra content">
-    <ng-content select="card-extra"></ng-content>
+    <ng-content select="[card-extra]"></ng-content>
   </div>
   <ng-content></ng-content>
 </div>`
@@ -30,6 +30,7 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 export class SemanticCardComponent {
   @Input() class: string;
   @Input() image: string;
+  @Input() title: string;
 }
 
 /**

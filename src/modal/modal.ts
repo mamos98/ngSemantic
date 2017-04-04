@@ -20,10 +20,10 @@ declare var jQuery: any;
         {{title}}
     </div>
     <div class="content">
-        <ng-content select="modal-content"></ng-content>
+        <ng-content select="[modal-content]"></ng-content>
     </div>
     <div class="actions">
-        <ng-content select="modal-actions"></ng-content>
+        <ng-content select="[modal-actions]"></ng-content>
     </div>
 </div>`
 })
@@ -56,7 +56,7 @@ export class SemanticModalComponent implements OnDestroy {
   }
 }
 
-@Directive({ selector: 'modal-content, modal-actions' })
+@Directive({ selector: '[modal-content], [modal-actions]' })
 export class SMModalTagsDirective {
   // No behavior
   // The only purpose is to "declare" the tag in Angular2
